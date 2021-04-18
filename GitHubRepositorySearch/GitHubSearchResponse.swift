@@ -17,7 +17,7 @@ struct Repository: Decodable {
     var fullName: String
     var owner: Owner
     var stargazersCount: Int
-    var watchersCount: Int
+//    var watchersCount: Int    // invalid, use subscribers_count by https://api.github.com/repos/
     var language: String?   // contains null some repositories
     var forksCount: Int
     var openIssuesCount: Int
