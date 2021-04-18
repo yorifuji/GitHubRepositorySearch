@@ -3,7 +3,6 @@
 //  iOSEngineerCodeCheck
 //
 //  Created by yorifuji on 2021/04/17.
-//  Copyright © 2021 YUMEMI Inc. All rights reserved.
 //
 
 import Foundation
