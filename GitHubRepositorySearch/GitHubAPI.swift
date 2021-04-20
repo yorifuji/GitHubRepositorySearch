@@ -1,5 +1,5 @@
 //
-//  GitHubSearchRepositoryAPI.swift
+//  GitHubAPI.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by yorifuji on 2021/04/18.
@@ -7,12 +7,7 @@
 
 import Foundation
 
-protocol APIClient {
-    func search(_ query: String, completion: @escaping (SearchResponse?) -> Void)
-    func cancel()
-}
-
-class GitHubSearchRepositoryAPI: APIClient {
+class GitHubAPI {
     let baseURL = "https://api.github.com/search/repositories?q="
     var task: URLSessionTask?
 

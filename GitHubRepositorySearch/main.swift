@@ -7,12 +7,10 @@
 
 import Foundation
 
-print("Hello, World!")
-
 let dispatchGroup = DispatchGroup()
 dispatchGroup.enter()
 
-let repository = GitHubRepository(GitHubSearchRepositoryAPI())
+let repository = GitHubRepository(GitHubAPI())
 repository.search("apple/swift") {
     if let response = repository.response {
         print("count: \(response.repositories.count)")

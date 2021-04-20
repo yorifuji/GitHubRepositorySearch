@@ -9,28 +9,18 @@ import Foundation
 
 class GitHubRepository {
 
-    var apiClient: APIClient?
-
+    var client: GitHubAPI?
     var response: SearchResponse?
-    var selectedIndex: Int = 0
 
-    init(_ apiClient: APIClient) {
-        self.apiClient = apiClient
+    init(_ client: GitHubAPI) {
+        self.client = client
     }
 
     func search(_ query: String, completion: @escaping () -> Void) {
-        apiClient?.search(query) { searchResponse in
+        client?.search(query) { searchResponse in
             self.response = searchResponse
             completion()
         }
-    }
-
-    func cancel() {
-        apiClient?.cancel()
-    }
-
-    func clear() {
-        response = nil
     }
 
     var count: Int {
@@ -39,17 +29,5 @@ class GitHubRepository {
         } else {
             return 0
         }
-    }
-
-    func repositoryByIndex(_ index: Int) -> Repository? {
-        if let response = response {
-            return response.repositories[index]
-        } else {
-            return nil
-        }
-    }
-
-    var selectedRepository: Repository? {
-        repositoryByIndex(selectedIndex)
     }
 }

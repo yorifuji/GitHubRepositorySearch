@@ -1,5 +1,5 @@
 //
-//  GitHubSearchResponse.swift
+//  GitHub.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by yorifuji on 2021/04/16.
@@ -17,8 +17,7 @@ struct Repository: Decodable {
     var fullName: String
     var owner: Owner
     var stargazersCount: Int
-//    var watchersCount: Int    // invalid, use subscribers_count by https://api.github.com/repos/
-    var language: String?   // contains null some repositories
+    var language: String?
     var forksCount: Int
     var openIssuesCount: Int
     var htmlUrl: String
