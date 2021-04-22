@@ -9,7 +9,7 @@ import Foundation
 
 class GitHubRepository {
 
-    var client: GitHubAPI?
+    var client: GitHubAPI
     var response: SearchResponse?
 
     init(_ client: GitHubAPI) {
@@ -17,7 +17,7 @@ class GitHubRepository {
     }
 
     func search(_ query: String, completion: @escaping () -> Void) {
-        client?.search(query) { searchResponse in
+        client.search(query) { searchResponse in
             self.response = searchResponse
             completion()
         }

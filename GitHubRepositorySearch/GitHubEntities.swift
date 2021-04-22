@@ -1,5 +1,5 @@
 //
-//  GitHub.swift
+//  GitHubEntities.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by yorifuji on 2021/04/16.
