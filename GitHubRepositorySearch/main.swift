@@ -10,9 +10,9 @@ import Foundation
 let dispatchGroup = DispatchGroup()
 dispatchGroup.enter()
 
-let repository = GitHubRepository(GitHubAPI())
-repository.search("apple/swift") {
-    if let response = repository.response {
+let model = GitHubRepositoryModel(GitHubAPI())
+model.searchRepository("apple/swift") { response in
+    if let response = response {
         print("count: \(response.repositories.count)")
         response.repositories.forEach { repo in
             print("----")

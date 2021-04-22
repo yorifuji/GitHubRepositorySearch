@@ -7,19 +7,17 @@
 
 import Foundation
 
-class GitHubRepository {
+class GitHubRepositoryModel {
 
     var client: GitHubAPI
-    var response: SearchResponse?
 
     init(_ client: GitHubAPI) {
         self.client = client
     }
 
-    func search(_ query: String, completion: @escaping () -> Void) {
+    func searchRepository(_ query: String, completion: @escaping (SearchResponse?) -> Void) {
         client.search(query) { searchResponse in
-            self.response = searchResponse
-            completion()
+            completion(searchResponse)
         }
     }
 }
