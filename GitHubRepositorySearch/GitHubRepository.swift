@@ -22,12 +22,4 @@ class GitHubRepository {
             completion()
         }
     }
-
-    var count: Int {
-        if let response = response {
-            return response.repositories.count
-        } else {
-            return 0
-        }
-    }
 }
